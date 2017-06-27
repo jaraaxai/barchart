@@ -37,7 +37,7 @@
         <?php endif;?>
       </td>
       <td class="bar"><?php echo $quotes->getVolume() ?></td>
-      <td class="bar"><?php echo $quotes->getTradetime() ?></td>
+      <td class="bar"><?php echo date('m/d/Y', strtotime($quotes->getTradetime())) ?></td>
       <td class="gol">
         <a href="#" onclick="remove(this, <?php echo $quotes->getId() ?>);">
         <img src="/images/icons/close.png">  

@@ -22,10 +22,11 @@ class QuotesForm extends BaseQuotesForm
 
 	$this->widgetSchema->setNameFormat('quotes[%s]');
 
-	$this->validatorSchema->setPostValidator(
+  if($this->isNew()){
+	  $this->validatorSchema->setPostValidator(
         new sfValidatorCallback(array('callback' => array($this, 'checkUnique')))
     );
-
+    }
   }
 
   public function checkUnique($validator, $values)
